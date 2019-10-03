@@ -4,6 +4,7 @@ class PasswordResetsController < ApplicationController
   before_action :check_expiration,  only: [:edit, :update]
   def new
   end
+
   def create
     @user = User.find_by(email: params[:password_reset][:email].downcase)
     if @users
@@ -16,8 +17,10 @@ class PasswordResetsController < ApplicationController
       render 'new'
     end
   end
+
   def edit
   end
+
   def update
     if params[:user][:password].empty?
       @user.errors.add(:password, "can't be empty")
@@ -32,6 +35,9 @@ class PasswordResetsController < ApplicationController
     end
   end
 
+def password_reset_expired?
+  reset_sent_At < 2.hours.ago
+end 
 
   private
   def user_params
