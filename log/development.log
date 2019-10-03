@@ -1,0 +1,2316 @@
+Started GET "/" for ::1 at 2019-10-02 16:15:41 -0400
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.6.2) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.6.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20190930190335)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190930190335"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexToUsersEmail (20190930192839)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190930192839"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20190930193558)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190930193558"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20191001011857)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191001011857"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20191001130038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191001130038"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddActivationToUsers (20191001134507)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated" boolean DEFAULT 'f'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "activated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191001134507"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddResetToUsers (20191001160318)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191001160318"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMicroposts (20191001175341)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_558c81314b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_microposts_on_user_id" ON "microposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191001175341"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-02 20:20:24.536077"], ["updated_at", "2019-10-02 20:20:24.536077"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-10-02 16:20:28 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3478.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3619ms (Views: 3609.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-02 16:21:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2019-10-02 16:22:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2019-10-02 16:22:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2019-10-02 16:26:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (407.6ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 670ms (Views: 663.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 16:53:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 77ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-02 16:53:38 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (416.2ms)
+Completed 500 Internal Server Error in 458ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___408408563348789909_70225269659780'
+Started GET "/" for ::1 at 2019-10-02 16:53:43 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-02 16:53:44 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___408408563348789909_70225270474240'
+Started GET "/" for ::1 at 2019-10-02 16:53:52 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for ::1 at 2019-10-02 16:53:54 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-02 16:54:25 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 16:59:07 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 16:59:21 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-02 17:14:40 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 87ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-02 17:14:43 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered users/new.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___408408563348789909_70225212607680'
+Started GET "/" for ::1 at 2019-10-03 08:33:08 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `microposts' for nil:NilClass):
+  
+app/controllers/static_pages_controller.rb:3:in `home'
+Started GET "/" for ::1 at 2019-10-03 08:40:51 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `microposts' for nil:NilClass):
+  
+app/controllers/static_pages_controller.rb:3:in `home'
+Started GET "/" for ::1 at 2019-10-03 08:49:17 -0400
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+
+  
+NoMethodError (undefined method `feed' for nil:NilClass):
+  
+app/controllers/static_pages_controller.rb:4:in `home'
+Started GET "/" for ::1 at 2019-10-03 08:50:06 -0400
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app/app/controllers/static_pages_controller.rb:14: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/static_pages_controller.rb:14: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2019-10-03 08:50:15 -0400
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+
+  
+NoMethodError (undefined method `feed' for nil:NilClass):
+  
+app/controllers/static_pages_controller.rb:4:in `home'
+Started GET "/" for ::1 at 2019-10-03 08:50:28 -0400
+Processing by StaticPagesController#home as HTML
+Completed 500 Internal Server Error in 1ms
+
+
+  
+NoMethodError (undefined method `feed' for nil:NilClass):
+  
+app/controllers/static_pages_controller.rb:4:in `home'
+Started GET "/" for ::1 at 2019-10-03 08:57:44 -0400
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app/app/controllers/static_pages_controller.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/static_pages_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2019-10-03 08:58:05 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (339.8ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 435ms (Views: 433.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 09:15:13 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 69.7ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 09:38:47 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 37ms (Views: 35.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 09:38:48 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 37.7ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 09:38:50 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 56.8ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 09:38:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (316.6ms)
+Completed 500 Internal Server Error in 351ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___2958460087681769152_70210319509780'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPictureToMicroposts (20191003141755)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "microposts" ADD "picture" varchar[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191003141755"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-10-03 11:06:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 11:25:24 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 11:25:25 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 11:25:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 11:25:32 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___2958460087681769152_70210336379840'
+Started POST "/__web_console/repl_sessions/5b5832f666fcda98a85b04f744e2b1ce/trace" for ::1 at 2019-10-03 11:30:19 -0400
+Started GET "/signup" for ::1 at 2019-10-03 11:31:36 -0400
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app/app/helpers/users_helper.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+    size = options[:size]
+    ^~~~):
+  
+app/helpers/users_helper.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/signup" for ::1 at 2019-10-03 11:31:53 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (371.5ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `data' for #<#<Class:0x00007fb63c59bf60>:0x00007fb63c59a278>):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:4:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___2958460087681769152_70210336621460'
+Started GET "/signup" for ::1 at 2019-10-03 11:32:14 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (275.4ms)
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `options' for #<#<Class:0x00007fb63f14ac10>:0x00007fb63f158c70>
+Did you mean?  url_options):
+    21:       <%= f.submit "Create my account", class: "btn btn-primary" %>
+    22:     <% end %>
+    23:     <div class="gravatar_edit">
+    24:       <%= gravatar_for @user %>
+    25:       <a href="https://gravatar.com/emails">change</a>
+    26:     </div>
+    27:   </div>
+  
+app/helpers/users_helper.rb:5:in `gravatar_for'
+app/views/users/new.html.erb:24:in `_app_views_users_new_html_erb___2958460087681769152_70210359526440'
+Started GET "/signup" for ::1 at 2019-10-03 11:32:42 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 65.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 11:32:59 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 11:42:46 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 62.7ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 11:42:48 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 51.7ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 11:42:50 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 64ms (Views: 36.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 11:44:12 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 12:07:31 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 81ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 12:07:35 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2019-10-03 12:07:38 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 12:08:18 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 12:08:49 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:08:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 12:09:10 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/signup" for ::1 at 2019-10-03 12:12:58 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 12:13:04 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 64ms (Views: 63.2ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 12:13:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 44ms (Views: 42.1ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:13:24 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 81ms (Views: 35.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 12:13:45 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 12:20:18 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 74.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:20:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 78ms (Views: 49.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:22:11 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (1.2ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:22:12 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.4ms)
+  Rendered users/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 95ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:22:13 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:22:13 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-10-03 12:27:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:11:in `show'
+Started POST "/signup" for ::1 at 2019-10-03 12:27:57 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 12:33:50 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:33:55 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 12:34:36 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 12:44:23 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 12:44:25 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 12:44:30 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/signup" for ::1 at 2019-10-03 13:14:57 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 13:14:58 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 81.9ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:14:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 100ms (Views: 34.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 13:15:07 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 13:19:35 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (377.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 474ms (Views: 471.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:19:36 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 78ms (Views: 46.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 13:20:14 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/8fa46f098fd60cce0886ab312248d105" for ::1 at 2019-10-03 13:20:24 -0400
+Started PUT "/__web_console/repl_sessions/8fa46f098fd60cce0886ab312248d105" for ::1 at 2019-10-03 13:20:27 -0400
+Started GET "/" for ::1 at 2019-10-03 13:25:55 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 40.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:26:00 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 60ms (Views: 58.4ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:26:02 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 61ms (Views: 34.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 13:26:09 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/signup" for ::1 at 2019-10-03 13:36:18 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 13:36:20 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 58.2ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:36:21 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 44ms (Views: 41.2ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:24 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 43ms (Views: 41.5ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:26 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 55.3ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:27 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 49ms (Views: 46.7ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:27 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 53ms (Views: 51.7ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:28 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 63ms (Views: 60.5ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:28 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 67.9ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 13:36:29 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 47.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:36:29 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 65ms (Views: 62.8ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:31 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 44.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:36:32 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 74ms (Views: 71.7ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:33 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 65ms (Views: 63.6ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 13:36:34 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 58ms (Views: 55.1ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:36:34 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 102ms (Views: 98.9ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:36:35 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 102ms (Views: 98.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:38:02 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 32.3ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 13:38:04 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 44.5ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:38:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 44.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:38:06 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 81ms (Views: 79.7ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:38:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 63ms (Views: 33.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 13:38:29 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/signup" for ::1 at 2019-10-03 13:41:24 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/a4a5fc27989a90cd6b23fc4192cf688f" for ::1 at 2019-10-03 13:41:26 -0400
+Started PUT "/__web_console/repl_sessions/a4a5fc27989a90cd6b23fc4192cf688f" for ::1 at 2019-10-03 13:41:28 -0400
+Started PUT "/__web_console/repl_sessions/a4a5fc27989a90cd6b23fc4192cf688f" for ::1 at 2019-10-03 13:54:06 -0400
+Started GET "/" for ::1 at 2019-10-03 13:58:30 -0400
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app/config/routes.rb:22: syntax error, unexpected tSTRING_BEG, expecting end
+root :to'static_pages#home'
+        ^
+/Users/noahday/Documents/GitHub/web_app/config/routes.rb:39: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:22: syntax error, unexpected tSTRING_BEG, expecting end
+config/routes.rb:39: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2019-10-03 13:58:41 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 65.5ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:58:54 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 43.7ms)
+
+
+Started POST "/login" for ::1 at 2019-10-03 13:59:04 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 13:59:35 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 97ms (Views: 95.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 13:59:36 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 45ms (Views: 43.7ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 13:59:37 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 13:59:44 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-03 14:00:04 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 14:00:27 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:00:29 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/help" for ::1 at 2019-10-03 14:00:31 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:00:32 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:00:34 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2019-10-03 14:00:56 -0400
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:01:03 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 14:01:29 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 14:02:14 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 38ms (Views: 36.9ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:03:00 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 85ms (Views: 36.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/signup" for ::1 at 2019-10-03 14:03:01 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/signup"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 14:08:13 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-10-03 14:08:14 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `store_location' for #<UsersController:0x00007fb640163750>):
+  
+app/controllers/application_controller.rb:8:in `logged_in_user'
+Started GET "/users" for ::1 at 2019-10-03 14:08:34 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `store_location' for #<UsersController:0x00007fb63c30c308>):
+  
+app/controllers/application_controller.rb:8:in `logged_in_user'
+Started GET "/" for ::1 at 2019-10-03 14:08:40 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:08:41 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:08:51 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-10-03 14:08:52 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `store_location' for #<UsersController:0x00007fb63c14f060>):
+  
+app/controllers/application_controller.rb:8:in `logged_in_user'
+Started GET "/users" for ::1 at 2019-10-03 14:09:11 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `store_location' for #<UsersController:0x00007fb63c3bc2f8>):
+  
+app/controllers/application_controller.rb:8:in `logged_in_user'
+Started GET "/" for ::1 at 2019-10-03 14:09:13 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:09:14 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:09:25 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:09:27 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/1" for ::1 at 2019-10-03 14:15:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2019-10-03 14:15:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:11:in `show'
+Started GET "/" for ::1 at 2019-10-03 14:16:54 -0400
+  
+AbstractController::ActionNotFound (The action 'hello' could not be found for ApplicationController):
+  
+actionpack (5.1.6.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-03 14:17:17 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 118ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:18:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 78ms (Views: 59.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:24:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:24:40 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:24:42 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-03 14:25:03 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 57.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2019-10-03 14:25:09 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4pRwMb1yGtclAY07XTvwYYqfH3fxuxg4NN4OrWvP/bA6wiLcOJ5Gv8CzHfhw36NeuRKS6p3uRcw7OczXc6ywQ==", "user"=>{"name"=>"Noah Day", "email"=>"noah.day@bytelion.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "noah.day@bytelion.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Noah Day"], ["email", "noah.day@bytelion.com"], ["created_at", "2019-10-03 18:25:09.695517"], ["updated_at", "2019-10-03 18:25:09.695517"], ["password_digest", "$2a$10$eoxraZyay9cF1Hir.ioWm.cQ6d.4YgJwXJO1aV16/0emFkwtLjaKO"], ["activation_digest", "$2a$10$NT4HZAyUPqqqN487VgJe8O1j4ATSLCSbfVjWvkjPm3ujM69l8RJlu"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.8ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 308.1ms
+Sent mail to noah.day@bytelion.com (13.3ms)
+Date: Thu, 03 Oct 2019 14:25:10 -0400
+From: noreply@example.com
+To: noah.day@bytelion.com
+Message-ID: <5d963d06a02b0_e993fdb1d6da618187fd@Noahs-MacBook-Air.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d963d069d7e8_e993fdb1d6da61818621";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d963d069d7e8_e993fdb1d6da61818621
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+User#account_activation
+
+, find me in app/views/user_mailer/account_activation.text.erb
+
+
+----==_mimepart_5d963d069d7e8_e993fdb1d6da61818621
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>User#account_activation</h1>
+
+<p>
+  , find me in app/views/user_mailer/account_activation.html.erb
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_5d963d069d7e8_e993fdb1d6da61818621--
+
+Redirected to http://localhost:9000/
+Completed 302 Found in 1057ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-03 14:25:10 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-03 14:25:27 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for ::1 at 2019-10-03 14:25:33 -0400
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app/app/controllers/password_resets_controller.rb:28: syntax error, unexpected '=', expecting end
+      flash [:success] = "Password has been reset."
+                       ^
+/Users/noahday/Documents/GitHub/web_app/app/controllers/password_resets_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/password_resets_controller.rb:28: syntax error, unexpected '=', expecting end
+app/controllers/password_resets_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/login" for ::1 at 2019-10-03 14:25:38 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
