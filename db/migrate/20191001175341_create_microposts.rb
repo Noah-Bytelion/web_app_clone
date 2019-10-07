@@ -1,4 +1,6 @@
 class CreateMicroposts < ActiveRecord::Migration[5.1]
+  def new
+  end 
   def change
     create_table :microposts do |t|
       t.text :content

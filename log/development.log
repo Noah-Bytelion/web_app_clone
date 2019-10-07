@@ -7492,3 +7492,1892 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 155ms (Views: 149.5ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/" for ::1 at 2019-10-07 13:04:01 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (4.4ms)
+  Rendered shared/_error_messages.html.erb (4.3ms)
+  Rendered shared/_micropost_form.html.erb (6.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318942273080'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318933863940'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318933863940'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318949009080'
+Started GET "/help" for ::1 at 2019-10-07 13:04:07 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 382ms (Views: 378.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 13:04:22 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.6ms)
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 189ms (Views: 106.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 13:04:25 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.5ms)
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 13:04:30 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.3ms)
+  Rendered shared/_error_messages.html.erb (5.3ms)
+  Rendered shared/_micropost_form.html.erb (7.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318944442620'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318944373920'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318944373920'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318964416400'
+Started GET "/users" for ::1 at 2019-10-07 13:07:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.3ms)
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 59.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 13:07:23 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.9ms)
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 13:07:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.7ms)
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 67ms (Views: 62.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 13:07:28 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (3.1ms)
+  Rendered shared/_micropost_form.html.erb (5.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318964144140'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318964095560'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318964095560'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318963893400'
+Started GET "/users" for ::1 at 2019-10-07 13:07:31 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (0.8ms)
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 13:07:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.3ms)
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 51.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 13:07:40 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.4ms)
+  Rendered shared/_error_messages.html.erb (3.7ms)
+  Rendered shared/_micropost_form.html.erb (5.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318964831060'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318964782280'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318964782280'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318964604520'
+Started GET "/" for ::1 at 2019-10-07 13:08:22 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.8ms)
+  Rendered shared/_error_messages.html.erb (4.1ms)
+  Rendered shared/_micropost_form.html.erb (6.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318934663220'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318934650220'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318934650220'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318963560180'
+Started GET "/" for ::1 at 2019-10-07 13:08:57 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.2ms)
+  Rendered shared/_error_messages.html.erb (3.0ms)
+  Rendered shared/_micropost_form.html.erb (6.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318945174780'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318945164960'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318945164960'
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318945082740'
+Started GET "/help" for ::1 at 2019-10-07 13:09:01 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 13:11:16 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (1.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_stats with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/noahday/Documents/GitHub/web_app_clone/app/views"
+):
+     5:         <%= render 'shared/user_info' %>
+     6:       </section>
+     7:       <section class="stats">
+     8:         <%= render 'shared/stats' %>
+     9:       </section>
+    10:       <section class="micropost_form">
+    11:         <%= render 'shared/micropost_form' %>
+  
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318976418500'
+Started GET "/" for ::1 at 2019-10-07 13:11:45 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.9ms)
+  Rendered shared/_error_messages.html.erb (3.2ms)
+  Rendered shared/_micropost_form.html.erb (4.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318964513340'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318964478680'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318964478680'
+app/views/static_pages/home.html.erb:11:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318976469180'
+Started GET "/" for ::1 at 2019-10-07 13:20:46 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_stats with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/noahday/Documents/GitHub/web_app_clone/app/views"
+):
+     5:         <%= render 'shared/user_info' %>
+     6:       </section>
+     7:       <section class="stats">
+     8:         <%= render 'shared/stats' %> -->
+     9:       </section>
+    10:       <section class="micropost_form">
+    11:         <%= render 'shared/micropost_form' %>
+  
+app/views/static_pages/home.html.erb:8:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318965831020'
+Started GET "/" for ::1 at 2019-10-07 13:22:37 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.3ms)
+  Rendered shared/_error_messages.html.erb (2.9ms)
+  Rendered shared/_micropost_form.html.erb (5.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__3982305447428721984_70318948948080'
+app/views/shared/_micropost_form.html.erb:2:in `block in _app_views_shared__micropost_form_html_erb___1951908784018768466_70318948781860'
+app/views/shared/_micropost_form.html.erb:1:in `_app_views_shared__micropost_form_html_erb___1951908784018768466_70318948781860'
+app/views/static_pages/home.html.erb:11:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318948689460'
+Started GET "/" for ::1 at 2019-10-07 13:33:44 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (7.6ms)
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered shared/_micropost_form.html.erb (26.5ms)
+  Rendered shared/_feed.html.erb (2.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app_clone/app/views/shared/_feed.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/shared/_feed.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318966111260'
+Started GET "/" for ::1 at 2019-10-07 13:34:38 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (7.4ms)
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered shared/_micropost_form.html.erb (17.3ms)
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (6.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (37.3ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__1733764838177683255_70318977128200'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318976913520'
+Started GET "/" for ::1 at 2019-10-07 13:38:54 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_micropost_form.html.erb (3.0ms)
+  Rendered shared/_feed.html.erb (0.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/noahday/Documents/GitHub/web_app_clone/app/views/shared/_feed.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/shared/_feed.html.erb:8: syntax error, unexpected ensure, expecting end-of-input
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318975749120'
+Started GET "/" for ::1 at 2019-10-07 13:39:06 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.0ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__1733764838177683255_70318935325420'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___2061065862739722908_70318976240960'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-10-07 13:43:52 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.3ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (13.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (4.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (27.8ms)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219085493080'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219067965500'
+Started GET "/" for ::1 at 2019-10-07 13:51:19 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.4ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_micropost_form.html.erb (13.7ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (4.5ms)
+  Rendered static_pages/home.html.erb within layouts/application (27.2ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219085540360'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219085282600'
+Started GET "/" for ::1 at 2019-10-07 14:00:01 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.8ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_micropost_form.html.erb (3.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219086623720'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219099999900'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-10-07 14:18:08 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.2ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (3.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (1.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219085463020'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219068100180'
+Started GET "/" for ::1 at 2019-10-07 14:20:31 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (1.9ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (2.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219100197040'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219086635180'
+Started GET "/" for ::1 at 2019-10-07 14:45:21 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.7ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (4.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219069305860'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219069205520'
+Started GET "/" for ::1 at 2019-10-07 14:45:25 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (2.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219085744020'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219075158340'
+Started GET "/" for ::1 at 2019-10-07 14:47:07 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.6ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_micropost_form.html.erb (2.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219086477840'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219068827240'
+Started GET "/" for ::1 at 2019-10-07 14:56:12 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.3ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (2.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219072455380'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219069648420'
+Started GET "/" for ::1 at 2019-10-07 15:05:04 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (6.6ms)
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_micropost_form.html.erb (5.4ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (5.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4209432878789986226_70219100752260'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb___1601105349372913630_70219076368780'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-10-07 15:05:39 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.4ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (11.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (4.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (23.3ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210714159720'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210714019280'
+Started GET "/help" for ::1 at 2019-10-07 15:13:51 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 338ms (Views: 334.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:13:54 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.8ms)
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 96ms (Views: 89.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:13:56 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 65ms (Views: 58.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/help" for ::1 at 2019-10-07 15:13:59 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/help" for ::1 at 2019-10-07 15:14:00 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:14:01 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.4ms)
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 52.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:14:04 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.1ms)
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered shared/_micropost_form.html.erb (4.5ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210747043100'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210746915420'
+Started GET "/users" for ::1 at 2019-10-07 15:14:06 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.3ms)
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 55.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:14:11 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.7ms)
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 60ms (Views: 57.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:15:11 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.9ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered shared/_micropost_form.html.erb (12.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (4.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210714511540'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210719540320'
+Started GET "/users" for ::1 at 2019-10-07 15:15:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.4ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (13.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 503ms (Views: 497.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/help" for ::1 at 2019-10-07 15:15:17 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 115ms (Views: 113.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:15:52 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.0ms)
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered shared/_micropost_form.html.erb (5.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210722017140'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210745554460'
+Started GET "/help" for ::1 at 2019-10-07 15:15:56 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:15:57 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.1ms)
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 104ms (Views: 101.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:16:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.4ms)
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:16:04 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.1ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (50.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 157ms (Views: 154.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:16:07 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.7ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (3.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210746452080'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210723137440'
+Started GET "/" for ::1 at 2019-10-07 15:22:24 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (3.1ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (3.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (2.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210749878000'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210722346800'
+Started GET "/users/1" for ::1 at 2019-10-07 15:31:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3001/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:31:21 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (4.6ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (3.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210751289880'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210723139660'
+Started GET "/hep" for ::1 at 2019-10-07 15:31:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/hep"):
+  
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/help" for ::1 at 2019-10-07 15:31:31 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:31:51 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.5ms)
+  Rendered users/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:31:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [1 times] (1.7ms)
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 65ms (Views: 61.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:34:23 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "rails.svg" is not present in the asset pipeline.):
+    28:     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    29:   </div>
+    30: 
+    31:   <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200px"), "https://rubyonrails.org/" %>
+    32: <% end %>
+  
+app/views/static_pages/home.html.erb:31:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210753369380'
+Started GET "/" for ::1 at 2019-10-07 15:35:45 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-10-07 15:35:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (467.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 504ms (Views: 500.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-10-07 15:36:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FdMbZxZp3/AuWwvBwpvc6soWEV3O8s6kT8/zL2GCPk8y+FCYhbIAeTfpqs91WdGrknytHmZG6xAvxP+t7whNrg==", "user"=>{"name"=>"DayleyTech", "email"=>"dayleytech@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "dayleytech@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "DayleyTech"], ["email", "dayleytech@gmail.com"], ["created_at", "2019-10-07 19:36:32.497996"], ["updated_at", "2019-10-07 19:36:32.497996"], ["password_digest", "$2a$10$VctbZ9Jdl3IAN8LbWtjwNukQWbDqlcdwUMXq4kXaT7G.KJWreo4tq"], ["activation_digest", "$2a$10$gFn5T5eXUZCqcUeD5fWRtu5HbliI6.nvWa2lW5ylfC7QiK9apnNLK"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.9ms)
+UserMailer#account_activation: processed outbound mail in 389.6ms
+Sent mail to dayleytech@gmail.com (15.4ms)
+Date: Mon, 07 Oct 2019 15:36:33 -0400
+From: noreply@example.com
+To: dayleytech@gmail.com
+Message-ID: <5d9b93c14faa6_48133fdb3515c69c5261b@Noahs-MacBook-Air.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d9b93c14d127_48133fdb3515c69c525e1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5d9b93c14d127_48133fdb3515c69c525e1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi #<User:0x00007fb66d6d1228>
+Welcome to the Sample App! CLick on the link below to activate your account:
+
+http://0.0.0.0/account_activations/pTzXiMqGkG2nurElXqHQkA/edit?email=dayleytech%40gmail.com
+
+
+----==_mimepart_5d9b93c14d127_48133fdb3515c69c525e1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+<p>Hi #&lt;User:0x00007fb66d6d1228&gt;, </p>
+
+<p>
+Welcome to the Sample App! Click on the link below to activate you account:
+</p>
+
+<a href="http://0.0.0.0/account_activations/pTzXiMqGkG2nurElXqHQkA/edit?email=dayleytech%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5d9b93c14d127_48133fdb3515c69c525e1--
+
+Redirected to http://localhost:3001/
+Completed 302 Found in 906ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:36:33 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (69.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 119ms (Views: 118.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["activated", "t"], ["updated_at", "2019-10-07 19:37:07.464910"], ["id", 7]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-10-07 19:37:07.471891"], ["activated_at", "2019-10-07 19:37:07.471245"], ["id", 7]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2019-10-07 15:37:13 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-10-07 15:37:14 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-10-07 15:37:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bHda0r9TyJwwMGeZIZlMJt2aEzYtNGHomzoL2oaE4aW6AobR3qrzzqWP6DNuwG+epKfhSGtWvcOWUfAtD58w9w==", "session"=>{"email"=>"dayleytech@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dayleytech@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 108ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for ::1 at 2019-10-07 15:37:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ll6no+4Zi0H9vDlDuiHOKmlrEOSGQMJP5iagnTMIpaniVT2e2yMryuM5zfuKcvwLfBwcv/EXX72oB6c8B6z2eg==", "session"=>{"email"=>"dayleytech@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dayleytech@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3001/users/7
+Completed 302 Found in 82ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:37:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:37:44 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.5ms)
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:37:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 57ms (Views: 52.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:37:49 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (2.6ms)
+  Rendered users/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 58.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:37:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:37:52 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.0ms)
+  Rendered users/index.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:38:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 44.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:38:54 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered shared/_user_info.html.erb (4.1ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (4.1ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 7)
+                     OR user_id = 7)[0m
+  Rendered shared/_feed.html.erb (3.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 7)
+                     OR user_id = 7)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210746798860'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210710931220'
+Started GET "/users/7" for ::1 at 2019-10-07 15:38:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:42:16 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.6ms)
+  Rendered users/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 85ms (Views: 80.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:17 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 88ms (Views: 83.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 69ms (Views: 65.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:21 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 124ms (Views: 119.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/6" for ::1 at 2019-10-07 15:42:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:42:22 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.5ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:42:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.0ms)
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:42:25 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.4ms)
+  Rendered users/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:42:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:42:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 76ms (Views: 73.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for ::1 at 2019-10-07 15:42:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:42:42 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered shared/_user_info.html.erb (3.5ms)
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_micropost_form.html.erb (3.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 7)
+                     OR user_id = 7)[0m
+  Rendered shared/_feed.html.erb (3.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 7)
+                     OR user_id = 7)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210746440120'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210746241380'
+Started GET "/users/7" for ::1 at 2019-10-07 15:42:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-10-07 15:43:15 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered shared/_user_info.html.erb (2.8ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (3.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)[0m
+  Rendered shared/_feed.html.erb (3.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such table: relationships: SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 6)
+                     OR user_id = 6)):
+    1: <% if @feed_items.any? %>
+    2:   <ol class="microposts">
+    3:     <%= render @feed_items %>
+    4:   </ol>
+  
+app/views/shared/_feed.html.erb:1:in `_app_views_shared__feed_html_erb__4096929040755702371_70210746160000'
+app/views/static_pages/home.html.erb:16:in `_app_views_static_pages_home_html_erb__2712946879184068061_70210751125480'
+Started GET "/users" for ::1 at 2019-10-07 15:43:18 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (2.3ms)
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 131ms (Views: 126.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/help" for ::1 at 2019-10-07 15:43:26 -0400
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:43:27 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (2.8ms)
+  Rendered users/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:43:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (1.1ms)
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2019-10-07 15:43:30 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = ?[0m  [["activated", "t"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = ? LIMIT ? OFFSET ?[0m  [["activated", "t"], ["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [2 times] (2.0ms)
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.9ms)
+
+
