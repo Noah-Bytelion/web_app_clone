@@ -19264,3 +19264,14 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 126ms (Views: 123.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/help" for ::1 at 2019-10-10 15:43:58 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 4330ms (Views: 4322.4ms | ActiveRecord: 0.0ms)
+
+
