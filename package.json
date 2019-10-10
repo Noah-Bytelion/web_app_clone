@@ -1,5 +1,5 @@
 {
-  "name": "web_app",
+  "name": "web_app_clone",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
