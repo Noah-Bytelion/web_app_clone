@@ -16,5 +16,26 @@
   },
   "scripts": {
     "start": "node server.js"
-}
+  },
+  "description": "This is the sample application for [*Ruby on Rails Tutorial: Learn Web Development with Rails*](https://www.railstutorial.org/) by [Michael Hartl](http://www.michaelhartl.com/).",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noah-Bytelion/web_app_clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noah-Bytelion/web_app_clone/issues"
+  },
+  "engines": {
+    "node": "7.8.0",
+    "npm": "4.2.0"
+  },
+  "homepage": "https://github.com/Noah-Bytelion/web_app_clone#readme"
 }
