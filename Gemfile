@@ -46,5 +46,7 @@ end
 
 group :production do
   gem 'pg',                         '1.1.4'
-  gem 'fog',                        '1.42'
+  #gem 'fog',                        '1.42'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
