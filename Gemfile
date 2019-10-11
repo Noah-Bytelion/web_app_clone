@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails',                        '5.1.6.2'
+gem 'rails',                        '5.2.0'
 gem 'bcrypt',                       '3.1.12'
 gem 'faker',                        '1.7.3'
 gem 'carrierwave',                  '1.2.2'
-gem 'mini_magick',                  '4.9.4'
+gem 'mini_magick',                  '4.9.5'
 gem 'will_paginate',                '3.1.6'
 gem 'bootstrap-will_paginate',      '1.0.0'
 gem 'bootstrap-sass',               '3.4.1'
@@ -15,10 +15,15 @@ gem 'coffee-rails',                 '4.2.2'
 gem 'jquery-rails',                 '4.3.1'
 gem 'turbolinks',                   '5.0.1'
 gem 'jbuilder',                     '2.7.0'
+gem 'aws-sdk-s3',                 '1.46.0', require: false
+gem 'image_processing',           '1.9.3'
+gem 'active_storage_validations', '0.8.2'
+gem 'webpacker',                  '4.0.7'
+gem 'bootsnap',                   '1.4.4', require: false
 
 group :development, :test do
   gem 'sqlite3',                    '1.3.13'
-  gem 'byebug',                     '9.0.6', platform: :mri
+  gem 'byebug',                     '9.0.6', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -34,6 +39,9 @@ group :test do
   gem 'minitest-reporters',         '1.1.14'
   gem 'guard',                      '2.13.0'
   gem 'guard-minitest',             '2.4.4'
+  gem 'capybara',                 '3.28.0'
+gem 'selenium-webdriver',       '3.142.3'
+gem 'webdrivers',               '4.1.2'
 end
 
 group :production do
