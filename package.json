@@ -1,10 +1,41 @@
 {
-  "name": "web_app",
+  "name": "web_app_clone",
   "private": true,
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "@rails/actioncable": "^6.0.0-alpha",
+    "@rails/activestorage": "^6.0.0-alpha",
+    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.7",
+    "bootstrap": "3.4.1",
+    "jquery": "3.4.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.8.0"
+  },
   "scripts": {
     "start": "node server.js"
-}
+  },
+  "description": "This is the sample application for [*Ruby on Rails Tutorial: Learn Web Development with Rails*](https://www.railstutorial.org/) by [Michael Hartl](http://www.michaelhartl.com/).",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noah-Bytelion/web_app_clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noah-Bytelion/web_app_clone/issues"
+  },
+  "engines": {
+    "node": "7.8.0",
+    "npm": "4.2.0"
+  },
+  "homepage": "https://limitless-hamlet-28307.herokuapp.com/"
 }
