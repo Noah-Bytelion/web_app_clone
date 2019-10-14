@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js install
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js install v1.19.1
 
 PATH: 
-  /Users/noahday/.rvm/gems/ruby-2.6.3/bin:/Users/noahday/.rvm/gems/ruby-2.6.3@global/bin:/Users/noahday/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/noahday/.rvm/bin
+  /Users/noahday/.rvm/gems/ruby-2.6.3/bin:/Users/noahday/.rvm/gems/ruby-2.6.3@global/bin:/Users/noahday/.rvm/rubies/ruby-2.6.3/bin:/Users/noahday/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin
 
 Yarn version: 
   1.19.1
@@ -36,8 +36,7 @@ npm manifest:
       "jquery": "3.4.1",
       "turbolinks": "^5.2.0",
       "engines": {
-        "node": ">=6.0.0",
-        "yarn": ">=0.25.2"
+        "node": ">=6.0.0"
       }
     },
     "version": "0.1.0",
