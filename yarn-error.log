@@ -1,0 +1,77 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add --dev webpack-dev-server
+
+PATH: 
+  /Users/noahday/.rvm/gems/ruby-2.6.3/bin:/Users/noahday/.rvm/gems/ruby-2.6.3@global/bin:/Users/noahday/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/noahday/.rvm/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type object
+      at validateString (internal/validators.js:125:11)
+      at Object.isAbsolute (path.js:1136:5)
+      at module.exports.exports.default (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:100843:16)
+      at /usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:51524:63
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "web_app_clone",
+    "private": true,
+    "dependencies": {
+      "@rails/actioncable": "^6.0.0-alpha",
+      "@rails/activestorage": "^6.0.0-alpha",
+      "@rails/ujs": "^6.0.0-alpha",
+      "@rails/webpacker": "^4.0.7",
+      "bootstrap": "3.4.1",
+      "jquery": "3.4.1",
+      "turbolinks": "^5.2.0",
+      "engines": {
+        "npm": "6.x",
+        "yarn": "1.x"
+      }
+    },
+    "version": "0.1.0",
+    "devDependencies": {
+      "webpack-dev-server": "^3.8.0"
+    },
+    "scripts": {
+      "start": "node server.js"
+    },
+    "description": "This is the sample application for [*Ruby on Rails Tutorial: Learn Web Development with Rails*](https://www.railstutorial.org/) by [Michael Hartl](http://www.michaelhartl.com/).",
+    "main": "index.js",
+    "directories": {
+      "lib": "lib",
+      "test": "test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Noah-Bytelion/web_app_clone.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Noah-Bytelion/web_app_clone/issues"
+    },
+    "engines": {
+      "node": "7.8.0",
+      "npm": "4.2.0"
+    },
+    "homepage": "https://limitless-hamlet-28307.herokuapp.com/"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
