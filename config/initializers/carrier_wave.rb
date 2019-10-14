@@ -2,6 +2,10 @@ if Rails.env.production?
   CarrierWave.configure do |config|
     config.root = Rails.root.join('tmp') # adding these...
     config.cache_dir = 'carrierwave' # ...two lines
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     config.fog_credentials = {
       #configuration for Amazon S3
       :provider => 'AWS',
