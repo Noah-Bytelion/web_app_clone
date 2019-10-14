@@ -1,0 +1,13 @@
+current directory: /Users/noahday/Documents/GitHub/web_app_clone/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+/Users/noahday/.rvm/rubies/ruby-2.6.3/bin/ruby -I /Users/noahday/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191014-38043-ujwlop.rb extconf.rb
+creating Makefile
+
+current directory: /Users/noahday/Documents/GitHub/web_app_clone/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/noahday/Documents/GitHub/web_app_clone/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/noahday/Documents/GitHub/web_app_clone/vendor/bundle/ruby/2.6.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
